@@ -1,0 +1,10 @@
+{
+  "featured_articles": "Featured Articles",
+  "categories": "Explore Categories",
+  "category": {
+    "technology": "Technology",
+    "travel": "Travel",
+    "health": "Health",
+    "lifestyle": "Lifestyle"
+  }
+}

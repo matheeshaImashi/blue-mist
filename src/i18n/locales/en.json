@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Welcome to BLUE Mist",
+    "description": "Explore trends, stories, and insights from around the world."
+  },
+  "categories": {
+    "title": "Explore by Category",
+    "design": "Design",
+    "travel": "Travel",
+    "lifestyle": "Lifestyle",
+    "technology": "Technology",
+    "health": "Health"
+  },
+  "articles": {
+    "featured": "Featured Articles"
+  }
+}
