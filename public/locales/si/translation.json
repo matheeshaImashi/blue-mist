@@ -1,0 +1,10 @@
+{
+  "featured_articles": "ප්‍රසිද්ධ ලිපි",
+  "categories": "ප්‍රවර්ග අවස්ථා",
+  "category": {
+    "technology": "තාක්ෂණය",
+    "travel": "ගමන්",
+    "health": "සෞඛ්‍යය",
+    "lifestyle": "ජීවන රටාව"
+  }
+}
