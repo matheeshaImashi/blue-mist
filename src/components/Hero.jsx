@@ -1,29 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-const articles = [
-  {
-    id: 1,
-    title: "The Future of Design in 2025",
-    category: "Design",
-    date: "July 25, 2025",
-    image: "https://source.unsplash.com/600x400/?design,technology",
-  },
-  {
-    id: 2,
-    title: "10 Underrated Travel Destinations",
-    category: "Travel",
-    date: "July 24, 2025",
-    image: "https://source.unsplash.com/600x400/?travel,nature",
-  },
-  {
-    id: 3,
-    title: "Healthy Living in a Digital Age",
-    category: "Lifestyle",
-    date: "July 22, 2025",
-    image: "https://source.unsplash.com/600x400/?health,lifestyle",
-  },
-];
+import articles from "../data/articles.json";
 
 const Hero = () => {
   const { t } = useTranslation();
