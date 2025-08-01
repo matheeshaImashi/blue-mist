@@ -1,27 +1,31 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const articles = [
   {
     id: "design-2025",
-    title: "The Future of Design in 2025",
+    title: "The Future of Design in 2026",
     category: "Design",
     date: "July 25, 2025",
-    image: "https://source.unsplash.com/600x400/?design,technology",
+    image:
+      "https://venngage-wordpress.s3.amazonaws.com/uploads/2023/11/AI-and-Design-in-2025-Top-Trends-Shaping-the-Future-Blog-Header.png",
   },
   {
     id: "travel-hidden-gems",
     title: "10 Underrated Travel Destinations",
     category: "Travel",
     date: "July 24, 2025",
-    image: "https://source.unsplash.com/600x400/?travel,nature",
+    image:
+      "https://www.candorblog.com/wp-content/uploads/2017/05/travel-022.jpg",
   },
   {
     id: "healthy-living",
     title: "Healthy Living in a Digital Age",
     category: "Lifestyle",
     date: "July 22, 2025",
-    image: "https://source.unsplash.com/600x400/?health,lifestyle",
+    image:
+      "https://uimsapress.org/wp-content/uploads/2023/01/istockphoto-1280587810-612x612-1.jpg",
   },
 ];
 
@@ -35,9 +39,10 @@ const FeaturedArticles = () => {
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {articles.map(({ id, title, category, date, image }) => (
-          <div
+          <Link
             key={id}
-            className="rounded-xl overflow-hidden shadow-md dark:shadow-lg bg-white dark:bg-gray-800 transition hover:scale-105 duration-300"
+            to={`/article/${id}`}
+            className="rounded-xl overflow-hidden shadow-md dark:shadow-lg bg-white dark:bg-gray-800 transition hover:scale-105 duration-300 block"
           >
             <img src={image} alt={title} className="w-full h-48 object-cover" />
             <div className="p-4">
@@ -51,7 +56,7 @@ const FeaturedArticles = () => {
                 {date}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
+import { Routes, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import FeaturedArticles from "./components/FeaturedArticles";
+
+import Home from "./pages/Home";
+import ArticleDetail from "./pages/ArticalDetail";
 
 function App() {
   const { i18n } = useTranslation();
@@ -23,8 +24,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      {/* Header */}
       <div className="flex justify-between items-center p-4">
-        <h1 className="text-xl font-bold">BLUE Mist</h1>
+        {/* <h1 className="text-xl font-bold">Blue Mist</h1> */}
+
+        <img src="../src/logo.svg" />
+
         <div className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
@@ -43,9 +48,11 @@ function App() {
         </div>
       </div>
 
-      <Hero />
-      <Categories />
-      <FeaturedArticles />
+      {/* Page Routing */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/article/:id" element={<ArticleDetail />} />
+      </Routes>
     </div>
   );
 }
