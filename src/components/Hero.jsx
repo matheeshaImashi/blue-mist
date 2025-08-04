@@ -1,9 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import articles from "../data/articles.json";
 
 const Hero = () => {
   const { t } = useTranslation();
+
+  // Sort by date and take the latest 3
+  const latestArticles = [...articles]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
 
   return (
     <section className="text-center py-20 bg-gradient-to-br from-blue-100 to-blue-300 dark:from-slate-800 dark:to-slate-900">
@@ -14,12 +20,12 @@ const Hero = () => {
         {t("hero.description")}
       </p>
 
-      {/* Featured Articles */}
       <div className="grid gap-6 px-4 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-        {articles.map((article) => (
-          <div
+        {latestArticles.map((article) => (
+          <Link
+            to={`/article/${article.id}`}
             key={article.id}
-            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 block"
           >
             <img
               src={article.image}
@@ -37,7 +43,7 @@ const Hero = () => {
                 {article.date}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

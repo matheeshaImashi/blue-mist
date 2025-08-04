@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -40,7 +41,8 @@ const Categories = () => {
 
       <div className="grid gap-6 px-4 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
         {categories.map((cat, idx) => (
-          <div
+          <Link
+            to={`/articles?category=${encodeURIComponent(cat.name)}`}
             key={idx}
             className="relative overflow-hidden rounded-2xl shadow-md group hover:scale-[1.02] transition"
           >
@@ -52,7 +54,7 @@ const Categories = () => {
             <div className="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">
               {t(`categories.${cat.name.toLowerCase()}`)}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
